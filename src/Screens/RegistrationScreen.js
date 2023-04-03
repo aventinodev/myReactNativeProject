@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   Text,
   TextInput,
@@ -8,6 +9,7 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from "react-native";
+
 import { AntDesign } from "@expo/vector-icons";
 
 import { stylesForm } from "./FormStyle";
@@ -17,6 +19,7 @@ const initialState = {
   email: "",
   password: "",
 };
+
 const initialFocus = {
   login: false,
   email: false,
@@ -33,28 +36,32 @@ export const RegistrationScreen = ({
   const [isShowPassword, setIsShowPassword] = useState(true);
 
   const onSignUp = () => {
+    console.log("hahaha");
     if (state.login && state.email && state.password) {
       setState(initialState);
       return Alert.alert(
         `Login: ${state.login} \nemail: ${state.email} \npassword: ${state.password}`
       );
     }
-    return Alert.alert("You  should enter the data!");
+    return Alert.alert("You  should enter all the fields!");
   };
+
   const handleFocus = (key) => {
     setIsShowKeyboard(true);
     setIsOnFocus({ [key]: true });
   };
 
-  const handleBlur = (key) => {
-    setIsShowKeyboard(false);
-    setIsOnFocus({
-      [key]: false,
-    });
-  };
+  // const handleBlur = (key) => {
+  //   setIsShowKeyboard(false);
+  //   setIsOnFocus({
+  //     [key]: false,
+  //   });
+  // };
+
   const handleShowPassword = () => {
     setIsShowPassword((prevState) => !prevState);
   };
+
   return (
     <KeyboardAvoidingView
       style={stylesForm.container}
@@ -88,7 +95,7 @@ export const RegistrationScreen = ({
               setState((prevState) => ({ ...prevState, login: value }))
             }
             onFocus={() => handleFocus("login")}
-            onEndEditing={() => handleBlur("login")}
+            // onEndEditing={() => handleBlur("login")}
           />
         </View>
         <View style={{ width: "100%" }}>
@@ -104,7 +111,7 @@ export const RegistrationScreen = ({
               setState((prevState) => ({ ...prevState, email: value }))
             }
             onFocus={() => handleFocus("email")}
-            onEndEditing={() => handleBlur("email")}
+            // onEndEditing={() => handleBlur("email")}
           />
         </View>
 
@@ -121,7 +128,7 @@ export const RegistrationScreen = ({
               setState((prevState) => ({ ...prevState, password: value }))
             }
             onFocus={() => handleFocus("password")}
-            onEndEditing={() => handleBlur("password")}
+            // onEndEditing={() => handleBlur("password")}
           />
           <TouchableOpacity
             style={{
