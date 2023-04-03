@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import AppLoading  from "expo-app-loading";
+// import AppLoading from "expo-app-loading";
 // import { AppLoading } from "expo";
 import { StatusBar } from "expo-status-bar";
 
@@ -25,7 +25,7 @@ import { LoginScreen } from "./src/Screens/LoginScreen";
 // };
 
 export default App = () => {
-  const [isReady, setIsReady] = useState(false);
+  // const [isReady, setIsReady] = useState(false);
   const [isShowKeyboard, setIsShowKeyboard] = useState(false);
   const [logIn, setLogIn] = useState(false);
   const [dimensions, setdimensions] = useState(
