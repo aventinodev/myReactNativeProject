@@ -32,7 +32,6 @@ export const stylesForm = StyleSheet.create({
     height: 44,
     padding: 10,
     borderWidth: 1,
-    // borderColor: "#E8E8E8",
     borderRadius: 8,
     marginBottom: 16,
     backgroundColor: "#F6F6F6",
@@ -40,7 +39,7 @@ export const stylesForm = StyleSheet.create({
   button: {
     width: 300,
     borderColor: "#FF6C00",
-    borderRadius: "50%",
+    borderRadius: 25.5,
     paddingVertical: 16,
     backgroundColor: "#FF6C00",
     alignItems: "center",
